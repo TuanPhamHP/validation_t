@@ -1,0 +1,15 @@
+{
+  "name": "validation_t",
+  "version": "1.0.0",
+  "description": "A small lib to valid data",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "validation",
+    "t"
+  ],
+  "author": "Pham Anh Tuan",
+  "license": "ISC"
+}

@@ -1,4 +1,4 @@
-export default str = {
+export default {
   removeAscent: str => {
     if (str === null || str === undefined) return str;
     str = str.toLowerCase();

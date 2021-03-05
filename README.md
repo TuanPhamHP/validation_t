@@ -1,8 +1,7 @@
 # Validation_t
 
-![NPM Version]
-This lib was writen by Pham Anh Tuan .
-The destination of this lib is testing and do some small stuff
+This package was written by Phạm Anh Tuấn .
+The destination of this package is testing and do some small stuff
 
 <h3>Install</h3>
 <div style="background-color: #F7F7F7; padding : 12px 16px;">

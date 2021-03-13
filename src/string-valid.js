@@ -21,4 +21,45 @@ export default {
     let re = /^([^0-9]*)$/;
     return re.test(str);
   },
+  isURL: str => {
+    if (str === null || str === undefined) return str;
+    var pattern = new RegExp(
+      "^(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    ); // fragment locator
+    return !!pattern.test(str);
+  },
+  isContainURL: str => {
+    if (str === null || str === undefined) return str;
+    var pattern = new RegExp(
+      "(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$",
+      "i"
+    ); // fragment locator
+    return !!pattern.test(str);
+  },
+  getCurrency: str => {
+    if (+str != 0 && !+str) return str;
+    let val = String(str).trim();
+    let hT = val.split(".");
+    let head = hT[0].split("");
+    console.log(hT);
+    if (head.length > 3) {
+      let index = 3;
+      while (head.length - index >= 1) {
+        head.splice(head.length - index, 0, ",");
+        index += 4;
+      }
+    }
+    return hT.length > 1 ? head.join("") + "." + hT[1] : head.join("");
+  },
 };

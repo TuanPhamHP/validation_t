@@ -9,14 +9,18 @@ The destination of this package is testing and do some small stuff
   <p>yarn add validation_t</p>
 </div>
 
+# GITHUB :
+
+<a href="https://github.com/TuanPhamHP/validation_t"> &#9658; GITHUB</a>
+
 # Current Features :
 
-\*\* String valid Object
+\*\* String methods
 
 <div style="background-color: #F7F7F7; padding : 12px 16px;">
   <p>import { t_str } from "validation_t/src";</p>
 </div>
-      <b>t_str.<i>method-name</i></b>
+      <b>t_str.method-name</b>
       <table
         style="border:1px solid #ececec; border-spacing: 0px;border-collapse: collapse;    background-color: rgb(246 246 246 / 63%);"
       >
@@ -41,7 +45,7 @@ The destination of this package is testing and do some small stuff
           </tr>
           <tr>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
-              <b>removeAscent()</b>
+              <b>removeAscent(str)</b>
             </td>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
               str : String
@@ -53,7 +57,7 @@ The destination of this package is testing and do some small stuff
           </tr>
           <tr>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
-              <b>isEmail()</b>
+              <b>isEmail(str)</b>
             </td>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
               str : String
@@ -66,7 +70,31 @@ The destination of this package is testing and do some small stuff
           </tr>
           <tr>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
-              <b>isNotContainNumber()</b>
+              <b>isURL(str)</b>
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              str : String
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              Return a Boolean . Check if provided string match a url pattern <br />
+              Ex: isURL('https://www.npmjs.com/package/validation_t') -> true
+            </td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              <b>isContainURL(str)</b>
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              str : String
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              Return a Boolean . Check if provided string contain any url pattern <br />
+              Ex: isURL('thisexamplehttps://www.npmjs.com/package/validation_t') -> true
+            </td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              <b>isNotContainNumber(str)</b>
             </td>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
               str : String
@@ -77,7 +105,113 @@ The destination of this package is testing and do some small stuff
               Ex: isNotContainNumber('abc') -> true
             </td>
           </tr>
+          <tr>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              <b>getCurrency(str)</b>
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              str : String
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              Return a formated string if the string can convert to number, if not its return the string it self. 
+              Work the same with number .
+              <br />
+              Ex: getCurrency('abc') -> 'abc'
+               getCurrency('1234567.89') -> '1,234,567.89'
+            </td>
+          </tr>
         </tbody>
       </table>
+\*\* String methods
 
+<div style="background-color: #F7F7F7; padding : 12px 16px;">
+  <p>import { t_date } from "validation_t/src";</p>
+</div>
+<p>
+          syntax : formatDate(_date, format, lang)
+          <br />
+          _date : Valid Date value Ex : '01/13/2020' , '01/13/2020 12:20' ,
+          GTMString, ISOString, miliseconds ... .
+          <br />
+          format : String . Listed as an Array bellow
+          <br />
+          lang | default 'vi' : define your language . only can recognize 'vi'
+          as vietnamese, the rest will be treated as 'eng'
+        </p>
+        <table
+          style="
+            border: 1px solid #ececec;
+            border-spacing: 0px;
+            border-collapse: collapse;
+            background-color: rgb(246 246 246 / 63%);
+          "
+        >
+          <thead>
+            <tr>
+              <th style="border: 1px solid #ececec; padding: 4px 10px">
+                Format
+              </th>
+              <th style="border: 1px solid #ececec; padding: 4px 10px">
+                Return
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">day</td>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                <span> 'Monday' - 'Thứ 2'</span> <br />
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                d | dd | ddd
+              </td>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                <span>1 | 01 | 01</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                M | MM | MMM | MMMM
+              </td>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                <span>1 | 01 | Jan - Tháng 1 | January - Tháng 1</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                yy | yyyy
+              </td>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                <span>21 | 2021</span>
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                hh | mm | ss | mili | 12
+              </td>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                <span>09 | 09 | 09 | 789 | Turn time to 12-hour-clock </span>
+              </td>
+            </tr>
+            <tr>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                Format Array
+              </td>
+              <td style="border: 1px solid #ececec; padding: 4px 10px">
+                <span>
+                  d/M/yy | d-M-yy | dd/MM/yyyy | dd-MM-yyyy | day |MMM dd | yyyy
+                  |day |MMMM ddd | yyyy | hh:mm | hh:mm:ss | hh:mm:ss:mili |
+                  hh:mm 12 |hh:mm:ss 12 | hh:mm:ss:mili 12 | dd/MM/yyyy hh:mm |
+                  day |MMMM ddd |yyyy hh:mm | day |MMMM ddd | yyyy hh:mm:ss |
+                  day |MMMM ddd | yyyy hh:mm:mili | day |MMM dd | yyyy hh:mm |
+                  day |MMM dd | yyyy hh:mm 12 |dd/MM/yyyy hh:mm:ss | dd/MM/yyyy
+                  hh:mm:ss 12 | dd/MM/yyyyhh:mm:ss:mili | dd/MM/yyyy
+                  hh:mm:ss:mili 12
+                </span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 [npm-url]: https://www.npmjs.com/package/validation_t

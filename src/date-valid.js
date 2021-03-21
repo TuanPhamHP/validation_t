@@ -196,4 +196,33 @@ export default {
       }
     }
   },
+  formatDateCustomize: (_date, format, lang = "vi", timeZone = 24) => {
+    if (!_date || !new Date(_date)) return _date;
+    let md = new Date(_date);
+    let day = md.getDay();
+    let date = md.getDate();
+    let month = md.getMonth();
+    let year = md.getFullYear();
+    let hours = md.getHours();
+    let minutes = md.getMinutes();
+    let seconds = md.getSeconds();
+    let miliseconds = md.getMilliseconds();
+    let dateObject = {
+      day: lang == "vi" ? (day !== 7 ? "Thứ " + (day + 1) : "Chủ nhật") : fullWeekDayEng[day],
+      d: date,
+      dd: String(date).padStart(2, 0),
+      M: String(month + 1),
+      MM: String(month + 1).padStart(2, 0),
+      MMM: lang == "vi" ? `Th${month + 1}` : sortMonthEng[month],
+      MMMM: lang == "vi" ? `Tháng ${month + 1}` : fullMonthEng[month],
+      yy: String(year).slice(-2),
+      yyyy: year,
+      hh: timeZone == 24 ? String(hours).padStart(2, 0) : `${hours > 12 ? String(hours - 12).padStart(2, 0) : String(hours).padStart(2, 0)}`,
+      mm: String(minutes).padStart(2, 0),
+      ss: String(seconds).padStart(2, 0),
+      mili: String(miliseconds),
+    };
+    console.log(format);
+    console.log(dateObject);
+  },
 };

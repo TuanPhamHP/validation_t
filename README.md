@@ -18,7 +18,7 @@ The destination of this package is testing and do some small stuff
 \*\* String methods
 
 <div style="background-color: #F7F7F7; padding : 12px 16px;">
-  <p>import { t_str } from "validation_t/src";</p>
+  <b>import { t_str } from "validation_t/src";</b>
 </div>
       <b>t_str.method-name</b>
       <table
@@ -122,13 +122,14 @@ The destination of this package is testing and do some small stuff
           </tr>
         </tbody>
       </table>
-\*\* String methods
+
+\*\* Date methods
 
 <div style="background-color: #F7F7F7; padding : 12px 16px;">
   <p>import { t_date } from "validation_t/src";</p>
 </div>
 <p>
-          syntax : formatDate(_date, format, lang)
+          syntax : <b>t_date.formatDate(_date, format, lang)</b>
           <br />
           _date : Valid Date value Ex : '01/13/2020' , '01/13/2020 12:20' ,
           GTMString, ISOString, miliseconds ... .

@@ -222,7 +222,7 @@ export default {
       ss: String(seconds).padStart(2, 0),
       mili: String(miliseconds),
     };
-    console.log(format);
-    console.log(dateObject);
+
+    return dateObject;
   },
 };

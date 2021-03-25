@@ -1,7 +1,8 @@
 const sortMonthEng = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const fullMonthEng = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 const sortWeekDayEng = ["Mon", "Tue", "Wed", "Thurs", "Fri", "Sat", "Sun"];
-const fullWeekDayEng = ["Monday", "Tuesday", "Wednesday", "Thursday", "Fridat", "Saturday", "Sunday"];
+const fullWeekDayEng = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+const fullWeekDayVi = ["Chủ Nhật", "Thứ 2", "Thứ 3", "Thứ 4", "Thứ 5", "Thứ 6", "Thứ 7"];
 export default {
   formatDate: (_date, format, lang = "vi") => {
     if (!_date || !new Date(_date)) return _date;
@@ -196,7 +197,7 @@ export default {
       }
     }
   },
-  formatDateCustomize: (_date, format, lang = "vi", timeZone = 24) => {
+  formatDateCustomize: (_date, lang = "vi", timeZone = 24) => {
     if (!_date || !new Date(_date)) return _date;
     let md = new Date(_date);
     let day = md.getDay();
@@ -208,7 +209,7 @@ export default {
     let seconds = md.getSeconds();
     let miliseconds = md.getMilliseconds();
     let dateObject = {
-      day: lang == "vi" ? (day !== 7 ? "Thứ " + (day + 1) : "Chủ nhật") : fullWeekDayEng[day],
+      day: lang == "vi" ? fullWeekDayVi[day] : fullWeekDayEng[day],
       d: date,
       dd: String(date).padStart(2, 0),
       M: String(month + 1),

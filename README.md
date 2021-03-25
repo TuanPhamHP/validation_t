@@ -18,9 +18,9 @@ The destination of this package is testing and do some small stuff
 \*\* String methods
 
 <div style="background-color: #F7F7F7; padding : 12px 16px;">
-  <b>import { t_str } from "validation_t/src";</b>
+  <b>import { tStr } from "validation_t/src";</b>
 </div>
-      <b>t_str.method-name</b>
+      Syntax : <b>tStr.method-name</b>
       <table
         style="border:1px solid #ececec; border-spacing: 0px;border-collapse: collapse;    background-color: rgb(246 246 246 / 63%);"
       >
@@ -126,10 +126,10 @@ The destination of this package is testing and do some small stuff
 \*\* Date methods
 
 <div style="background-color: #F7F7F7; padding : 12px 16px;">
-  <p>import { t_date } from "validation_t/src";</p>
+  <p>import { tDate } from "validation_t/src";</p>
 </div>
 <p>
-          syntax : <b>t_date.formatDate(_date, format, lang)</b>
+          Syntax : <b>tDate.formatDate(_date, format, lang)</b>
           <br />
           _date : Valid Date value Ex : '01/13/2020' , '01/13/2020 12:20' ,
           GTMString, ISOString, miliseconds ... .
@@ -189,11 +189,11 @@ The destination of this package is testing and do some small stuff
               </td>
             </tr>
             <tr>
-              <td style="border: 1px solid #ececec; padding: 4px 10px">
+              <td style="border: 1px solid #ececec; padding: 4px 10px; white-space : nowrap;">
                 hh | mm | ss | mili | 12
               </td>
               <td style="border: 1px solid #ececec; padding: 4px 10px">
-                <span>09 | 09 | 09 | 789 | Turn time to 12-hour-clock </span>
+                <span >09 | 09 | 09 | 789 | Turn time to 12-hour-clock </span>
               </td>
             </tr>
             <tr>
@@ -215,4 +215,9 @@ The destination of this package is testing and do some small stuff
             </tr>
           </tbody>
         </table>
+<p>Or an Object to customize format by your self </p>
+ Syntax : <b>tDate.formatDateCustomize(_date,  lang, timezone)</b>
+ <p>_date : valid date</p>
+ <p>lang : String - default 'vi' as vietnamese, other value will be treat as 'en'</p>
+ <p>timezone : Number - default 24 . switch to 12 if you wanna change to 12'clock .</p>
 [npm-url]: https://www.npmjs.com/package/validation_t

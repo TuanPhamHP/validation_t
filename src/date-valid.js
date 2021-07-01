@@ -226,4 +226,15 @@ export default {
 
     return dateObject;
   },
+  getCurrentWeek: _date => {
+    if (!_date) {
+      return { startWeek: null, endWeek: null };
+    }
+    const now = new Date(_date).getDay();
+    const gapToMon = now - 1 === -1 ? 6 : now - 1;
+    const gapToSun = 7 - now === 7 ? 0 : 7 - now;
+    const startWeek = new Date(new Date(_date)).setDate(new Date(_date).getDate() - gapToMon);
+    const endWeek = new Date(new Date(_date)).setDate(new Date(_date).getDate() + gapToSun);
+    return { startWeek: startWeek, endWeek: endWeek };
+  },
 };

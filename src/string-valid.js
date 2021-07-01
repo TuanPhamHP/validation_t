@@ -52,7 +52,6 @@ export default {
     let val = String(str).trim();
     let hT = val.split(".");
     let head = hT[0].split("");
-    console.log(hT);
     if (head.length > 3) {
       let index = 3;
       while (head.length - index >= 1) {

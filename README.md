@@ -215,9 +215,52 @@ The destination of this package is testing and do some small stuff
             </tr>
           </tbody>
         </table>
-<p>Or an Object to customize format by your self </p>
- Syntax : <b>tDate.formatDateCustomize(_date,  lang, timezone)</b>
- <p>_date : valid date</p>
- <p>lang : String - default 'vi' as vietnamese, other value will be treat as 'en'</p>
- <p>timezone : Number - default 24 . switch to 12 if you wanna change to 12'clock .</p>
-[npm-url]: https://www.npmjs.com/package/validation_t
+      Syntax : <b>tDate.method-name</b>
+      <table
+        style="border:1px solid #ececec; border-spacing: 0px;border-collapse: collapse;    background-color: rgb(246 246 246 / 63%);"
+      >
+        <thead>
+          <tr>
+            <th style="border:1px solid #ececec; padding : 4px 10px;">
+              Methods
+            </th>
+            <th style="border:1px solid #ececec; padding : 4px 10px;">
+              Params
+            </th>
+            <th style="border:1px solid #ececec; padding : 4px 10px;">
+              Result
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="3">
+              <p style="text-align:center;"><b>Date</b></p>
+            </td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              <b>formatDateCustomize(_date, lang, timezone)</b>
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              _date : valid date</br>
+              lang : String - default 'vi' as vietnamese, other value will be treat as 'en' </br>
+              timezone : Number - default 24 . switch to 12 if you wanna change to 12'clock 
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              Return an Object to customize format by your self
+            </td>
+          </tr>
+          <tr>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              <b>getCurrentWeek(_date)</b>
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              _date : valid date
+            </td>
+            <td style="border:1px solid #ececec; padding : 4px 10px;">
+              Return an object `{ startWeek: startWeek, endWeek: endWeek }`
+            </td>
+          </tr>
+        </tbody>
+      </table>

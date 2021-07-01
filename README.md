@@ -259,7 +259,10 @@ The destination of this package is testing and do some small stuff
               _date : valid date
             </td>
             <td style="border:1px solid #ececec; padding : 4px 10px;">
-              Return an object `{ startWeek: startWeek, endWeek: endWeek }`
+              Return an object { </br>
+                startWeek: dateObject,</br>
+                endWeek: dateObject </br>
+                 }
             </td>
           </tr>
         </tbody>

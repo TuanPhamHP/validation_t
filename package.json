@@ -1,6 +1,6 @@
 {
   "name": "validation_t",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "description": "A small lib to valid data",
   "main": "index.js",
   "scripts": {
